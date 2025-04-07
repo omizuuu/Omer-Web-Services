@@ -1,0 +1,2172 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body, h1, h2, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: black;
+    padding-top: 80px; /* Adjust this value to match the height of the navbar */
+}
+
+/* Remove default margins from the body and html */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent horizontal scrolling */
+html, body {
+    overflow-x: hidden; /* Disable horizontal scrolling */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    width: 100%; /* Ensure the body takes up the full width */
+    box-sizing: border-box; /* Include padding and border in width calculations */
+}
+
+/* Fix for elements causing overflow */
+* {
+    max-width: 100%; /* Ensure no element exceeds the viewport width */
+    box-sizing: border-box; /* Include padding and border in width calculations */
+}
+
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: center; /* Center the entire navbar content */
+    align-items: center;
+    background-color: #fefeff;
+    padding: 20px 20px; /* Increase padding to restore height */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0; /* Align it to the top */
+    left: 0; /* Align it to the left */
+    width: 100%; /* Make it span the full width of the page */
+    background-color: white; /* Add a background color to prevent transparency */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a shadow for better visibility */
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Logo Styling */
+.navbar .logo {
+    display: flex;
+    justify-content: center; /* Center the logo horizontally */
+    align-items: center; /* Center the logo vertically */
+    width: 60px; /* Reduce the width of the logo */
+    height: 60px; /* Reduce the height of the logo */
+    border-radius: 50%; /* Keep the rounded border */
+    object-fit: cover; /* Ensure the image fits properly */
+    object-position: center; /* Center the image inside the logo */
+}
+
+.navbar .logo img {
+    max-width: none; /* Override the global max-width */
+    width: 90px; /* Set a fixed width for the logo */
+    height: 130px; /* Set a fixed height for the logo */
+    object-fit: cover; /* Ensure the image fits properly */
+    object-position: center; /* Center the image inside the logo */
+}
+
+.logo a, .logo img {
+    pointer-events: auto; /* Ensure the element is clickable */
+}
+
+/* Navigation Content */
+.nav-content {
+    display: flex;
+    justify-content: flex-start; /* Align the navigation links closer to the left */
+    align-items: center; /* Center the links vertically */
+    padding-left: 220px; /* Add more spacing between the logo and the links */
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Increase spacing between the links */
+    margin: 0; /* Remove extra margin */
+    justify-content: flex-start; /* Align the links closer to the left */
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+/* Navigation Links Styling */
+.nav-links a {
+    text-decoration: none;
+    color: black; /* Change text color to black */
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    font-weight: bold; /* Make the font bold */
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+    background-color: #007BFF; /* Blue background on hover */
+    color: white; /* White text color on hover */
+    transform: scale(1.1); /* Slightly enlarge the link on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Custom Div inside Navbar */
+.custom-div {
+    width: 900px; /* Set the width of the new div */
+    display: flex; 
+    justify-content: flex-end; /* Align content inside the custom div to the right */
+    align-items: center; /* Center content vertically */
+}
+
+/* Hamburger Menu Styling */
+.hamburger {
+    display: flex; /* Ensure the hamburger menu is displayed */
+    flex-direction: column; /* Stack the lines vertically */
+    gap: 5px; /* Add spacing between the lines */
+    cursor: pointer; /* Change the cursor to a pointer */
+    position: absolute; /* Position the hamburger menu */
+    top: 20px; /* Adjust the vertical position */
+    right: 20px; /* Adjust the horizontal position */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+    display: none; /* Hide the dropdown menu by default */
+    position: absolute; /* Position it relative to the hamburger menu */
+    top: 60px; /* Adjust the vertical position below the hamburger */
+    right: 20px; /* Align it with the hamburger menu */
+    background-color: white; /* Set the background color */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    border-radius: 5px; /* Add rounded corners */
+    overflow: hidden; /* Prevent content overflow */
+    z-index: 999; /* Ensure it appears above other elements */
+}
+
+/* Show the dropdown menu when the 'show' class is added */
+.dropdown-menu.show {
+    display: block;
+}
+
+/* Dropdown Menu Items */
+.dropdown-menu ul {
+    list-style: none; /* Remove bullet points */
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown-menu ul li {
+    border-bottom: 1px solid #ddd; /* Add a divider between items */
+}
+
+.dropdown-menu ul li:last-child {
+    border-bottom: none; /* Remove the divider for the last item */
+}
+
+.dropdown-menu ul li a {
+    display: block;
+    padding: 10px 20px; /* Add padding for better spacing */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Set text color */
+    font-size: 16px; /* Adjust font size */
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.dropdown-menu ul li a:hover {
+    background-color: #007BFF; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the nav links on mobile */
+    }
+
+    .hamburger {
+        display: flex; /* Show the hamburger menu on mobile */
+    }
+
+    .dropdown-menu {
+        width: 200px; /* Adjust the width of the dropdown menu */
+    }
+}
+
+/* Toggle Menu for Mobile Devices */
+@media (max-width: 768px) {
+    .hamburger {
+        position: relative; /* Ensure proper positioning */
+        margin: 0 auto; /* Center the toggle menu horizontally */
+        display: flex; /* Ensure the toggle menu is displayed properly */
+        justify-content: center; /* Center the toggle menu content */
+        align-items: center; /* Vertically align the toggle menu content */
+    }
+
+    .dropdown-menu {
+        text-align: center; /* Center-align the dropdown menu items */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .hamburger {
+        top: 0px; /* Adjust the top position */
+        right: 15px; /* Adjust the right position */
+    }
+
+    .dropdown-menu {
+        width: 200px; /* Set a fixed width for the dropdown menu */
+        right: 15px; /* Align it with the hamburger menu */
+    }
+}
+
+/* Main Content */
+.main-content {
+    padding-bottom: 40px;
+    padding-top: 80px; /* Add space for the fixed navbar */
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 40px 20px; /* Add padding around the content */
+    border-radius: 10px; /* Optional: Add rounded corners for the section */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Grid Layout */
+.grid-layout {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* 3:1 ratio for text and image */
+    gap: 20px; /* Add spacing between the columns */
+    align-items: center; /* Align items vertically */
+    margin-top: 40px;
+}
+
+/* Text Section */
+.text-section {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    max-width: 500px; /* Limit the width of the text */
+    margin-left: 100px; /* Align the text to the left */
+    text-align: left; /* Align the text content to the left */
+    padding-left: 20px; /* Optional: Add some padding to the left */
+}
+
+/* Image Section */
+.image-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add spacing above the image */
+}
+
+.project-image {
+    width: 190%;
+    max-width: 1000px; /* Increase the maximum width of the image */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.main-content h2 {
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.main-content p {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Paragraph Styling */
+.font-paragraph {
+    text-align: center; /* Center the paragraph */
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    font-size: 1rem; /* Adjust the font size */
+    color: #555; /* Slightly lighter grey text color */
+    line-height: 1.6; /* Improve readability with line height */
+    margin: 0 auto; /* Center the paragraph */
+    max-width: 800px; /* Limit the width of the paragraph */
+}
+
+/* Quote Section for Desktop */
+.quote-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between left and right parts */
+    align-items: center; /* Center items vertically */
+    gap: 30px; /* Add spacing between the left and right parts */
+    width: 100%; /* Full width of the section */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the section horizontally */
+    min-height: 60vh; /* Make the section fill the entire viewport height */
+    padding: 0px 20px; /* Adjust padding to move the section higher */
+    box-sizing: border-box; /* Ensure padding is included in the height calculation */
+    transform: translateY(50px); /* Move the section 50px higher */
+    margin-bottom: 0px; /* Reduce the space below the first section */
+}
+
+/* Left Part: Title, Text, Button, and Stars */
+.quote-left {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Add spacing between items */
+    flex: 1; /* Take up equal space with the right part */
+    max-width: 500px; /* Reduce the width of the left part */
+    margin-left: 40px; /* Move the left part more to the left */
+}
+
+.quote {
+    font-family: 'Merriweather', serif; /* Apply Merriweather font */
+    font-size: 2rem; /* Adjust font size for better balance */
+    color: black;
+    text-align: left; /* Align the text to the left */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.font-paragraph {
+    text-align: left; /* Align the paragraph to the left */
+    font-size: 1rem; /* Adjust font size */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Slightly lighter grey text */
+}
+
+.button-container {
+    text-align: center; /* Center the button horizontally */
+    margin: 0 auto; /* Center the button within the left-side box */
+}
+
+.star-rating {
+    text-align: center; /* Center the stars horizontally */
+    margin: 10px auto 0; /* Add spacing above the stars and center them */
+    font-size: 1.8rem; /* Adjust the size of the stars */
+    color: #FFD700; /* Gold color for the stars */
+}
+
+/* Right Part: Image */
+.quote-right {
+    flex: 1; /* Take up equal space with the left part */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.quote-right img {
+    width: 100%; /* Ensure the image is responsive */
+    max-width: 500px; /* Larger image for desktop */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image covers the space properly */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-section {
+        flex-direction: column; /* Stack all items vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 20px; /* Adjust spacing between items */
+        padding: 20px; /* Reduce padding for smaller screens */
+        min-height: auto; /* Allow the section height to adjust naturally */
+    }
+
+    .quote-left {
+        align-items: flex-start; /* Align the left part to the left */
+        text-align: left; /* Align text to the left */
+        max-width: 90%; /* Reduce the width of the left part */
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .button-container,
+    .star-rating {
+        text-align: center; /* Center the button and stars */
+        margin: 0 auto; /* Center them horizontally */
+    }
+
+    .quote-right {
+        margin-top: 2000px; /* Add spacing above the image */
+        align-self: center; /* Center the image horizontally */
+    }
+
+    .quote-right img {
+        max-width: 00px; /* Slightly larger image for mobile */
+        height: auto; /* Maintain the aspect ratio */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-section {
+        flex-direction: column; /* Stack all items vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 20px; /* Adjust spacing between items */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .quote-left {
+        align-items: flex-start; /* Align the left part to the left */
+        text-align: left; /* Align text to the left */
+        max-width: 90%; /* Reduce the width of the left part */
+        margin-left: 0; /* Reset margin for mobile */
+    }
+
+    .button-container,
+    .star-rating {
+        text-align: center; /* Center the button and stars */
+        margin: 0 auto; /* Center them horizontally */
+    }
+
+    .quote-right {
+        margin-top: 20px; /* Add spacing above the image */
+        align-self: center; /* Center the image horizontally */
+    }
+
+    .quote-right img {
+        max-width: 300px; /* Slightly larger image for mobile */
+        height: auto; /* Maintain the aspect ratio */
+    }
+}
+
+/* Quote Section for Desktop */
+.quote-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between left and right parts */
+    align-items: flex-start; /* Align items to the top */
+    gap: 30px; /* Add spacing between the left and right parts */
+    width: 100%; /* Full width of the section */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 50px; /* Add padding inside the section */
+}
+
+/* Left Part: Title, Text, Button, and Stars */
+.quote-left {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Add spacing between items */
+    flex: 1; /* Take up equal space with the right part */
+    max-width: 500px; /* Reduce the width of the left part */
+    margin-left: 40px; /* Move the left part more to the left */
+}
+
+.quote {
+    font-family: 'Merriweather', serif; /* Apply Merriweather font */
+    font-size: 2rem; /* Adjust font size for better balance */
+    color: black;
+    text-align: left; /* Align the text to the left */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+.font-paragraph {
+    text-align: left; /* Align the paragraph to the left */
+    font-size: 1rem; /* Adjust font size */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Slightly lighter grey text */
+}
+
+/* Button and Stars */
+.button-container {
+    text-align: center; /* Center the button horizontally */
+    margin: 0 auto; /* Center the button within the left-side box */
+}
+
+.star-rating {
+    text-align: center; /* Center the stars horizontally */
+    margin: 10px auto 0; /* Add spacing above the stars and center them */
+    font-size: 1.8rem; /* Adjust the size of the stars */
+    color: #FFD700; /* Gold color for the stars */
+}
+
+/* Right Part: Image */
+.quote-right {
+    flex: 1; /* Take up equal space with the left part */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+}
+
+.quote-right img {
+    width: 100%; /* Ensure the image is responsive */
+    max-width: 400px; /* Larger image for desktop */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image covers the space properly */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-section {
+        flex-direction: column; /* Stack all items vertically */
+        align-items: flex-start; /* Align items to the left */
+        gap: 20px; /* Adjust spacing between items */
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .quote-left {
+        align-items: flex-start; /* Align the left part to the left */
+        text-align: left; /* Align text to the left */
+        max-width: 90%; /* Reduce the width of the left part */
+        margin-left: -90px;
+        margin-top: 50px; /* Move the left part more to the left */
+    }
+
+    .button-container,
+    .star-rating {
+        text-align: center; /* Center the button and stars */
+        margin: 0 auto; /* Center them horizontally */
+    }
+
+    .quote-right {
+        margin-left: -90px;
+        margin-top: 20px; /* Add spacing above the image */
+        align-self: center; /* Center the image horizontally */
+    }
+
+    .quote-right img {
+        max-width: 400px; /* Slightly larger image for mobile */
+        height: auto; /* Maintain the aspect ratio */
+    }
+}
+
+/* Button, Text, and Stars */
+.button-container {
+    text-align: center; /* Center the button horizontally */
+    margin: 0 auto; /* Center the button within the left-side box */
+}
+
+.font-paragraph {
+    text-align: left; /* Align the paragraph to the left */
+    margin-top: 10px; /* Add spacing above the paragraph */
+    font-size: 1rem; /* Adjust font size */
+    line-height: 1.6; /* Improve readability */
+    color: #555; /* Slightly lighter grey text */
+}
+
+.star-rating {
+    text-align: center; /* Center the stars horizontally */
+    margin: 10px auto 0; /* Add spacing above the stars and center them */
+    font-size: 1.8rem; /* Adjust the size of the stars */
+    color: #FFD700; /* Gold color for the stars */
+}
+
+/* Image Styling */
+.empty-space {
+    display: flex;
+    justify-content: flex-start; /* Align the image to the left */
+    align-items: center; /* Center the image vertically */
+    margin-top: 20px; /* Add spacing above the image */
+    padding: 10px; /* Add padding around the image to prevent touching */
+}
+
+.empty-space img {
+    width: 100%; /* Ensure the image is responsive */
+    max-width: 300px; /* Limit the maximum width of the image */
+    height: auto; /* Maintain the aspect ratio */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    object-fit: cover; /* Ensure the image covers the space properly */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-section {
+        padding: 20px; /* Reduce padding for smaller screens */
+    }
+
+    .quote {
+        font-size: 1.8rem; /* Slightly reduce font size for mobile */
+    }
+
+    .empty-space img {
+        max-width: 250px; /* Ensure the image is smaller on mobile */
+    }
+
+    .button-container {
+        margin-top: 10px; /* Add spacing above the button */
+    }
+
+    .star-rating {
+        margin-top: 10px; /* Add spacing above the stars */
+    }
+}
+
+/* Wrapper for the Quote Section */
+.quote-wrapper {
+    background-color: #f9f9f9; /* Lighter grey background color */
+    padding: 80px 20px; /* Adjust padding inside the wrapper */
+    margin: 0; /* Remove margin to make the background cover the entire section */
+    width: 100%; /* Ensure the background spans the full width */
+    min-height: 100vh; /* Make the section fill the entire viewport height */
+    box-sizing: border-box; /* Include padding in the height calculation */
+    margin-top: 0; /* Remove any top margin */
+    padding-top: 0; /* Remove any top padding */
+    position: relative; /* Ensure proper stacking */
+    z-index: 1; /* Ensure it appears below the navbar */
+}
+
+/* Button Styling */
+.btn {
+    display: inline-block;
+    padding: 12px 20px; /* Reduce padding for a smaller button */
+    font-size: 1rem; /* Adjust font size */
+    font-family: 'Poppins', sans-serif; /* Use a professional font */
+    color: white; /* Button text color */
+    background-color: #007BFF; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Star Rating Styling */
+.star-rating {
+    text-align: center; /* Center the stars */
+    margin-top: 5px; /* Reduce spacing above the stars */
+    font-size: 1.8rem; /* Default size of the stars */
+    color: #FFD700; /* Gold color for the stars */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+/* Hover Effect: Stars grow when hovering over the button */
+.btn:hover + .star-rating {
+    transform: scale(1.2); /* Slightly enlarge the stars */
+}
+
+/* Highlighted Word Styling */
+.highlight {
+    background-color: rgba(0, 255, 127, 0.5); /* Springgreen background with slight transparency */
+    color: #099b4b; /* Springgreen text color */
+    padding: 0px 5px; /* Add some padding around the word */
+    border-radius: 3px; /* Optional: Add rounded corners */
+    margin: 1px 6px; /* Add horizontal margin to separate the borders */
+}
+
+/* New Section Styling */
+.new-section {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 50px 20px; /* Add padding for spacing */
+    text-align: center; /* Center-align the content */
+    margin: 20px auto; /* Add spacing above and below the section */
+    max-width: 1200px; /* Limit the width of the section */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+/* Section Title */
+.section-title {
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    font-size: 2rem; /* Adjust the font size */
+    color: #333; /* Dark grey text color */
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Add spacing below the title */
+    margin-top: 20px; /* Add spacing above the title */
+}
+
+/* Services Section */
+.services-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Left side takes 1/3, right side takes 2/3 */
+    gap: 40px; /* Add spacing between the left and right sides */
+    align-items: start; /* Align content to the top */
+    padding: 150px 50px; /* Add padding around the section */
+    max-width: 1200px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section horizontally */
+    margin-top: 20px; /* Reduce the space above the second section */
+}
+
+/* Left Side */
+.services-left {
+    text-align: left; /* Align text to the left */
+    margin-top: 150px; /* Increase the margin to move the section further down */
+}
+
+.services-left .section-title {
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    font-size: 2rem; /* Adjust the font size */
+    color: #333; /* Dark grey text color */
+    margin-bottom: 20px; /* Add spacing below the title */
+}
+
+.services-left .font-paragraph {
+    font-size: 1rem; /* Adjust the font size */
+    color: #555; /* Slightly lighter grey text color */
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 20px; /* Add spacing below the paragraph */
+}
+
+/* Button Styling */
+.build-website-btn {
+    display: inline-block;
+    padding: 12px 30px; /* Add padding for a good button size */
+    font-size: 1.2rem; /* Adjust font size */
+    font-family: 'Poppins', sans-serif; /* Use a professional font */
+    color: white; /* Button text color */
+    background-color: #007BFF; /* Button background color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add rounded corners */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: all 0.3s ease; /* Smooth transition for hover effect */
+    margin-top: 20px; /* Add spacing above the button */
+}
+
+.build-website-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.1); /* Slightly enlarge the button on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
+}
+
+/* Right Side */
+.services-right {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Add spacing between the cards */
+}
+
+/* Service Card */
+.service-card {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; /* Add padding inside the card */
+    text-align: center; /* Center-align the content */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+.service-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Add a deeper shadow on hover */
+}
+
+/* Service Icon */
+.service-icon {
+    font-size: 3rem; /* Large icon size */
+    color: #007BFF; /* Blue color for the icon */
+    margin-bottom: 15px; /* Add spacing below the icon */
+    transition: transform 0.3s ease; /* Smooth hover animation */
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* Service Title */
+.service-title {
+    font-size: 1.5rem; /* Adjust the font size */
+    font-weight: bold; /* Make the title bold */
+    color: #333; /* Dark grey text color */
+    margin-bottom: 10px; /* Add spacing below the title */
+}
+
+/* Service Description */
+.service-description {
+    font-size: 1rem; /* Adjust the font size */
+    color: #555; /* Slightly lighter grey text color */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Testimonial Styling */
+.testimonial {
+    margin: 20px 0; /* Add spacing above and below the testimonial */
+    text-align: left; /* Align the testimonial text to the left */
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    color: #555; /* Slightly lighter grey text color */
+}
+
+.testimonial-text {
+    font-size: 1rem; /* Adjust the font size */
+    font-style: italic; /* Italicize the testimonial text */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Darker grey for the text */
+    margin-bottom: 10px; /* Add spacing below the testimonial text */
+}
+
+.testimonial-text i {
+    color: #007BFF; /* Blue color for the quote icons */
+    margin: 0 5px; /* Add spacing around the icons */
+}
+
+.testimonial-author {
+    font-size: 0.9rem; /* Slightly smaller font size for the author */
+    font-weight: bold; /* Make the author name bold */
+    color: #007BFF; /* Blue color for the author name */
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    padding: 40px 20px; /* Reduce padding around the section */
+    text-align: center; /* Center-align the content */
+    background-color: #f9f9f9; /* Light grey background */
+}
+
+.testimonials-section .section-title {
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    font-size: 2rem; /* Adjust the font size */
+    color: #333; /* Dark grey text color */
+    margin-bottom: 20px; /* Reduce spacing below the title */
+}
+
+/* Testimonials Grid */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid with flexible columns */
+    gap: 20px; /* Add spacing between the boxes */
+    justify-content: center; /* Center the grid items horizontally */
+    align-items: center; /* Center the grid items vertically */
+    max-width: 1200px; /* Limit the width of the grid */
+    margin: 0 auto; /* Center the grid container */
+}
+
+/* Responsive Design for iPads (Medium Screens) */
+@media (max-width: 1024px) {
+    .testimonials-grid {
+        display: grid; /* Use grid layout */
+        grid-template-columns: repeat(2, 1fr); /* Two-column layout for iPads */
+        gap: 20px; /* Add spacing between the boxes */
+        justify-items: center; /* Center the boxes horizontally */
+    }
+
+    .testimonial-card {
+        width: 90%; /* Adjust the width of the boxes for iPads */
+        max-width: 300px; /* Limit the maximum width of the boxes */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        display: grid; /* Use grid layout */
+        grid-template-columns: 1fr; /* Single-column layout for mobile */
+        gap: 20px; /* Add spacing between the boxes */
+        justify-items: center; /* Center the boxes horizontally */
+    }
+
+    .testimonial-card {
+        width: 90%; /* Adjust the width of the boxes for mobile */
+        max-width: 300px; /* Limit the maximum width of the boxes */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for iPads */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr; /* Single-column layout for mobile */
+    }
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    width: 100%; /* Make the card fill the column */
+    max-width: 250px; /* Limit the maximum width of the cards */
+    height: 250px; /* Fixed height for the cards */
+    padding: 10px; /* Reduce padding inside the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align the text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a deeper shadow on hover */
+}
+
+/* Staggered Layout */
+.testimonial-card:nth-child(2n) {
+    margin-top: 10px; /* Slightly offset every second card */
+}
+
+.testimonial-card:nth-child(4n) {
+    margin-top: 20px; /* Slightly offset every fourth card */
+}
+
+/* Testimonial Icon */
+.testimonial-icon {
+    font-size: 2rem; /* Adjust the icon size */
+    color: #007BFF; /* Blue color for the icon */
+    margin-bottom: 10px; /* Add spacing below the icon */
+}
+
+/* Testimonial Author */
+.testimonial-author {
+    font-size: 1.2rem; /* Adjust the font size */
+    font-weight: bold; /* Make the author name bold */
+    color: #333; /* Dark grey text color */
+    margin-bottom: 10px; /* Add spacing below the author name */
+}
+
+/* Testimonial Text */
+.testimonial-text {
+    font-size: 1rem; /* Adjust the font size */
+    color: #555; /* Slightly lighter grey text color */
+    line-height: 1.4; /* Improve readability */
+    margin-bottom: 10px; /* Add spacing below the text */
+}
+
+/* Star Rating */
+.star-rating {
+    text-align: center; /* Center-align the stars */
+    font-size: 1.2rem; /* Adjust the size of the stars */
+    color: #FFD700; /* Gold color for the stars */
+}
+
+/* From Idea to Reality Section */
+.idea-to-reality-section {
+    display: grid; /* Use grid layout for better control */
+    grid-template-columns: 1fr 1fr; /* Two equal columns for larger screens */
+    gap: 30px; /* Space between left and right sides */
+    align-items: start; /* Align content to the top */
+    padding: 80px 20px; /* Add padding around the section */
+    max-width: 1200px; /* Limit the width of the section */
+    margin: 0 auto; /* Center the section horizontally */
+    background-color: #fff; /* White background */
+}
+
+/* Left Side Styling for "From Idea to Reality" */
+.idea-left {
+    text-align: left; /* Align text to the left */
+    margin-top: 0; /* Remove extra margin at the top */
+}
+
+/* Right Side Styling for "From Idea to Reality" */
+.idea-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for the cards */
+    gap: 20px; /* Add spacing between the cards */
+}
+
+/* Idea Card */
+.idea-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer; /* Ensures the cursor changes to a pointer on hover */
+    background-color: #fff; /* White background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 15px; /* Reduce padding inside the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: center; /* Center-align the text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover animation */
+}
+
+.idea-card:hover {
+    transform: translateY(-5px); /* Slightly lift the card on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Add a deeper shadow on hover */
+}
+
+.idea-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px; /* Add slight rounding to the image */
+}
+
+/* Concept Development Card */
+.concept-development {
+    position: relative; /* Enable positioning for child elements */
+    padding: 0; /* Remove padding inside the card */
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.concept-development .concept-image {
+    width: 100%; /* Make the image fill the card */
+    height: 100%; /* Ensure the image covers the card */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    opacity: 1; /* Keep the image fully visible */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add a semi-transparent black overlay */
+.concept-development::before {
+    content: ''; /* Add an empty pseudo-element */
+    position: absolute; /* Position it over the image */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire card */
+    height: 100%; /* Cover the entire card */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black layer */
+    z-index: 1; /* Place it above the image but below the text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.concept-development:hover::before {
+    background-color: rgba(0, 0, 0, 0.6); /* Darken the overlay on hover */
+}
+
+.concept-development .concept-label {
+    position: absolute; /* Position the label inside the card */
+    bottom: 10px; /* Place it at the bottom */
+    left: 10px; /* Align it to the left */
+    color: #fff; /* White text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the text bold */
+    z-index: 2; /* Place it above the overlay */
+}
+
+/* Audi Development Card */
+.audi-development {
+    position: relative; /* Enable positioning for child elements */
+    padding: 0; /* Remove padding inside the card */
+    overflow: hidden; /* Ensure content doesn't overflow the card */
+}
+
+.audi-development .audi-image {
+    width: 100%; /* Make the image fill the card */
+    height: 100%; /* Ensure the image covers the card */
+    object-fit: cover; /* Maintain aspect ratio and crop if necessary */
+    opacity: 1; /* Keep the image fully visible */
+    transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Add a semi-transparent black overlay */
+.audi-development::before {
+    content: ''; /* Add an empty pseudo-element */
+    position: absolute; /* Position it over the image */
+    top: 0;
+    left: 0;
+    width: 100%; /* Cover the entire card */
+    height: 100%; /* Cover the entire card */
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black layer */
+    z-index: 1; /* Place it above the image but below the text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.audi-development:hover::before {
+    background-color: rgba(0, 0, 0, 0.6); /* Darken the overlay on hover */
+}
+
+.audi-development .concept-label {
+    position: absolute; /* Position the label inside the card */
+    bottom: 10px; /* Place it at the bottom */
+    left: 10px; /* Align it to the left */
+    color: #fff; /* White text color */
+    font-size: 1.2rem; /* Adjust font size */
+    font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
+    font-weight: bold; /* Make the text bold */
+    z-index: 2; /* Place it above the overlay */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .idea-to-reality-section {
+        grid-template-columns: 1fr; /* Stack content in one column */
+        gap: 20px; /* Adjust spacing between items */
+    }
+
+    .idea-right {
+        margin-top: 20px; /* Add spacing above the image section */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .idea-to-reality-section {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack the left and right parts vertically */
+        gap: 20px; /* Add spacing between the parts */
+    }
+
+    .idea-left {
+        order: 1; /* Ensure the "From Idea to Reality" part appears first */
+    }
+
+    .idea-right {
+        order: 2; /* Ensure the "Project" part appears after the left part */
+    }
+}
+
+/* Default Layout for Larger Screens */
+.quote-section {
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space between the left and right parts */
+    align-items: center; /* Align items vertically */
+    gap: 30px; /* Add spacing between the left and right parts */
+    width: 100%; /* Full width of the section */
+    max-width: 1200px; /* Limit the maximum width */
+    margin: 0 auto; /* Center the section horizontally */
+    padding: 50px; /* Add padding inside the section */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-section {
+        flex-direction: column; /* Stack content vertically */
+        align-items: center; /* Center-align items */
+        gap: 20px; /* Adjust spacing between items */
+    }
+
+    .quote {
+        text-align: center; /* Center-align the text */
+        margin-bottom: 10px; /* Reduce spacing below the title */
+    }
+
+    .empty-space {
+        margin-top: 20px; /* Add spacing above the image */
+        padding: 0; /* Remove extra padding */
+    }
+
+    .empty-space img {
+        max-width: 250px; /* Ensure the image is smaller on mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .button-container {
+        margin-top: 10px; /* Add spacing above the button */
+    }
+
+    .star-rating {
+        margin-top: 10px; /* Add spacing above the stars */
+    }
+}
+
+/* Styled Link */
+.styled-link {
+    display: inline-block;
+    margin-top: 15px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #007BFF; /* Blue color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.styled-link:hover {
+    color: #0056b3; /* Darker blue on hover */
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Tech Stack Section */
+.tech-stack {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: 'Poppins', sans-serif; /* Modern font */
+}
+
+.tech-stack-title {
+    font-size: 1.5rem;
+    color: #333; /* Dark grey text */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+/* Grid Layout for Tech Stack */
+.tech-stack-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two equal columns */
+    gap: 20px; /* Add spacing between columns */
+}
+
+.tech-stack-column h4 {
+    font-size: 1.2rem;
+    color: #007bff; /* Blue color for column titles */
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.tech-stack-list {
+    list-style: none; /* Remove default list styling */
+    padding: 0;
+    margin: 0;
+}
+
+.tech-stack-list li {
+    font-size: 1rem;
+    color: #555; /* Slightly lighter grey text */
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.tech-stack-list li i {
+    color: #007bff; /* Blue color for icons */
+    font-size: 1.2rem; /* Slightly larger icons */
+}
+
+/* Initial state: hidden */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px); /* Slightly move down */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Smooth transition */
+}
+
+/* Visible state: animated */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Reset position */
+}
+
+/* Why Choose Me Section */
+.why-choose-me {
+    padding: 50px 0; /* Adjust padding to remove horizontal spacing */
+    background-color: #fff; /* Set background color to white */
+    text-align: center;
+    width: 100%; /* Ensure the section spans the full width */
+    margin: 0; /* Remove any margin */
+}
+
+.why-choose-me .section-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.why-choose-me-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns for the first row */
+    gap: 20px; /* Space between grid items */
+    justify-items: center; /* Center items horizontally */
+}
+
+.why-item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.why-icon {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.why-item p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Custom layout for the last two boxes */
+.why-choose-me-content .why-item:nth-child(4),
+.why-choose-me-content .why-item:nth-child(5) {
+    grid-column: span 1; /* Each box spans one column */
+    justify-self: center; /* Center the boxes horizontally */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .why-choose-me-content {
+        grid-template-columns: 1fr; /* Stack all boxes in one column on smaller screens */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .why-choose-me-content {
+        display: flex; /* Use Flexbox for layout */
+        flex-direction: column; /* Stack the items vertically */
+        align-items: center; /* Center the items horizontally */
+        gap: 20px; /* Add spacing between the items */
+        width: 80%; /* Reduce the width for better alignment */
+        margin: 0 auto; /* Center the section horizontally */
+    }
+
+    .why-item {
+        width: 100%; /* Ensure each item takes up the full width */
+        text-align: center; /* Center-align the text */
+    }
+}
+
+/* Why Choose Me Section */
+.why-choose-me-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent box size */
+    gap: 30px; /* Add spacing between items */
+    max-width: 1200px; /* Limit the width of the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+.why-item {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 30px; /* Add padding inside the boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align the content */
+    width: 110%; /* Ensure the boxes take up full width of the grid column */
+    max-width: 650px; /* Set a maximum width for the boxes */
+    margin: 0 auto; /* Center the boxes within the grid */
+}
+
+/* Contact Me Section */
+.contact-me { 
+    margin-top: 100px;
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 120px 20px; /* Increase top padding to push content below the navbar */
+    text-align: center; /* Center-align the content */
+}
+
+.contact-me .section-title {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 2rem; /* Larger title */
+    color: #333; /* Dark grey color */
+    margin-bottom: 40px; /* Add spacing below the title */
+}
+
+.contact-me-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 120px; /* Increase the space between the two boxes */
+    max-width: 1100px; /* Maximum width of the content */
+    margin: 0 auto; /* Center the content horizontally */
+    justify-content: center; /* Center the grid items */
+    align-items: stretch; /* Ensure both boxes have the same height */
+}
+
+.contact-placeholder,
+.contact-socials {
+    background-color: #fff; /* White background */
+    padding: 20px; /* Reduce padding inside the boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for consistent alignment */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: space-between; /* Distribute content evenly */
+    height: auto; /* Adjust height dynamically */
+    width: 100%; /* Ensure both boxes take up the full width of their grid column */
+}
+
+/* Left Side: Social Links */
+.contact-socials .section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    flex-direction: column; /* Arrange the icons in a vertical column */
+    gap: 16px; /* Add spacing between each icon */
+    margin-top: 8px;
+    align-items: flex-start; /* Align the icons to the left */
+    justify-content: flex-start; /* Ensure the icons are not centered */
+    list-style: none; /* Remove the bullet points */
+    padding: 0; /* Remove default padding */
+}
+
+.social-links li {
+    margin-bottom: 15px; /* Add spacing between items */
+    list-style: none; /* Ensure no bullet points */
+}
+
+.social-links a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #007bff; /* Blue color for links */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between icon and text */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+.social-links i {
+    font-size: 1.5rem;
+    color: #007bff; /* Blue color for icons */
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* Right Side: Text Content */
+.contact-placeholder h3 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-placeholder p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-me-content {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        gap: 20px;
+    }
+
+    .contact-placeholder {
+        text-align: center; /* Center-align text on smaller screens */
+    }
+
+    .contact-socials {
+        text-align: center; /* Center-align social links on smaller screens */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .contact-me-content {
+        width: 80%; /* Reduce the width of the contact section */
+        margin: 0 auto; /* Center the section horizontally */
+    }
+
+    .contact-placeholder, .contact-socials {
+        text-align: center; /* Center-align the text and social links */
+    }
+
+    .contact-socials ul {
+        padding: 0; /* Remove extra padding */
+    }
+
+    .contact-socials ul li {
+        margin-bottom: 10px; /* Add spacing between social links */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .contact-me-content {
+        display: flex; /* Use Flexbox for layout */
+        flex-direction: column; /* Stack the left and right parts vertically */
+        align-items: center; /* Center the content horizontally */
+        justify-content: center; /* Center the content vertically */
+        gap: 20px; /* Add spacing between the left and right parts */
+        width: 80%; /* Reduce the width for better alignment */
+        margin: 0 auto; /* Center the section horizontally */
+    }
+
+    .contact-placeholder, .contact-socials {
+        width: 100%; /* Ensure both parts take up the full width */
+        text-align: center; /* Center-align the text */
+    }
+}
+
+/* Footer Styling */
+.footer {
+    background-color: #1a1a1a; /* Dark background for a professional look */
+    color: #f1f1f1; /* Light text color for contrast */
+    padding: 40px 20px; /* Add padding for spacing */
+    display: flex;
+    justify-content: space-between; /* Space out the columns */
+    flex-wrap: wrap; /* Ensure responsiveness */
+    gap: 20px; /* Add spacing between columns */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Limit the width for better alignment */
+    margin: 0 auto; /* Center the footer content */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 40px; /* Add spacing between columns */
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1; /* Make columns flexible */
+    min-width: 250px; /* Ensure columns don't shrink too much */
+}
+
+.footer-title {
+    font-size: 1.8rem; /* Larger font for the title */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.footer-heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-link {
+    display: block;
+    color: #f1f1f1;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #007BFF; /* Add a hover effect with a blue color */
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 15px; /* Space between social icons */
+}
+
+.social-icon {
+    color: #f1f1f1;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007BFF; /* Add a hover effect with a blue color */
+}
+
+/* Remove the divider */
+.footer-divider {
+    display: none; /* Hide the divider */
+}
+
+/* Ensure that the nav-links are hidden by default on mobile */
+.social-links {
+    display: flex; /* Arrange the icons in a row */
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Align the icons vertically */
+    gap: 16px; /* Add spacing between the icons */
+}
+
+.social-icon {
+    font-size: 24px; /* Adjust the size of the icons */
+    color: #d1d5db; /* Light grey color for the icons */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.social-icon:hover {
+    color: #007BFF; /* Change color on hover (blue) */
+}
+
+.footer-social-links {
+    display: flex;
+    flex-direction: column; /* Arrange the icons in a vertical column */
+    gap: 16px; /* Add spacing between each link */
+    margin-top: 8px;
+    align-items: flex-start; /* Align the links to the left */
+}
+
+.footer-social-links a {
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1.2rem; /* Adjust font size */
+    font-family: 'Poppins', sans-serif;
+    color: #d1d5db; /* Light grey color for links */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between the icon and the text */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-social-links a:hover {
+    color: #007BFF; /* Change color on hover (blue) */
+}
+
+.footer-social-links i {
+    font-size: 1.5rem; /* Adjust icon size */
+    color: #d1d5db; /* Light grey color for icons */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.footer-social-links a:hover i {
+    transform: scale(1.2); /* Slightly enlarge the icon on hover */
+}
+
+/* Button and Stars for Desktop */
+.button-container {
+    text-align: center; /* Center the button horizontally */
+    margin: 0 auto; /* Center the button within the left-side box */
+}
+
+.star-rating {
+    text-align: center; /* Center the stars horizontally */
+    margin: 10px auto 0; /* Add spacing above the stars and center them */
+    font-size: 1.8rem; /* Adjust the size of the stars */
+    color: #FFD700; /* Gold color for the stars */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .button-container,
+    .star-rating {
+        text-align: center; /* Center the button and stars */
+        margin: 0 auto; /* Center them horizontally */
+    }
+
+    .star-rating {
+        margin-top: 10px; /* Add spacing above the stars */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .services-section {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack the left and right parts vertically */
+        gap: 20px; /* Add spacing between the left and right parts */
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+
+    .services-left {
+        order: 1; /* Ensure the left part appears first */
+        text-align: center; /* Center-align the text for mobile */
+        margin: 0 auto; /* Center the left part horizontally */
+    }
+
+    .services-right {
+        order: 2; /* Ensure the right part appears after the left part */
+        display: grid; /* Use grid layout for the boxes */
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 20px; /* Add spacing between the boxes */
+    }
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        text-align: center; /* Center the button horizontally */
+        margin: 0 auto 20px; /* Add 20px spacing below the button */
+    }
+
+    .services-right {
+        display: grid; /* Use grid layout for the boxes */
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 20px; /* Add spacing between the boxes */
+    }
+
+    .services-left {
+        text-align: center; /* Center-align the text for mobile */
+        margin-bottom: 60px; /* Add spacing below the left part */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        display: grid; /* Use grid layout */
+        grid-template-columns: 1fr; /* Single-column layout */
+        gap: 20px; /* Add spacing between the boxes */
+        justify-items: center; /* Center the boxes horizontally */
+    }
+
+    .testimonial-card {
+        width: 90%; /* Adjust the width of the boxes for mobile */
+        max-width: 300px; /* Limit the maximum width of the boxes */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .fourth-section {
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack the left and right parts vertically */
+        gap: 20px; /* Add spacing between the left and right parts */
+    }
+
+    .fourth-section-left {
+        order: 1; /* Ensure the left side appears first */
+    }
+
+    .fourth-section-right {
+        order: 2; /* Ensure the right side appears after the left side */
+    }
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .quote-section {
+        margin-top: -90px; /* Reduce the space above the first section */
+        padding-top: 10px; /* Reduce the padding inside the first section */
+    }
+
+    .services-section {
+        margin-top: 10px; /* Reduce the space above the second section */
+        padding-top: 10px; /* Reduce the padding inside the second section */
+    }
+}
+
+/* Adjust the left part of the second section for desktop */
+@media (min-width: 1025px) {
+    .services-left {
+        margin-top: 70px; /* Move the left part slightly higher */
+    }
+}
+
+/* Footer Styling */
+.footer-container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Align the content vertically */
+    gap: 40px; /* Add spacing between columns */
+    border-top: 1px solid #ddd; /* Add a horizontal line */
+    padding-top: 20px; /* Add spacing above the line */
+}
+
+.footer-social-links {
+    display: flex; /* Use Flexbox for social links */
+    gap: 20px; /* Add spacing between social icons */
+}
+
+.footer-social-links a {
+    text-decoration: none; /* Remove underline from links */
+    color: #555; /* Set text color */
+    font-size: 1.2rem; /* Adjust font size */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.footer-social-links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+.footer-divider {
+    text-align: center; /* Center the copyright text */
+    margin-top: 20px; /* Add spacing above the copyright text */
+    font-size: 0.9rem; /* Adjust font size */
+    color: #555; /* Set text color */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .grid-layout {
+        display: flex; /* Use Flexbox for layout */
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Add spacing between sections */
+    }
+
+    .text-section, .image-section {
+        width: 100%; /* Ensure full width for each section */
+        text-align: center; /* Center-align text for better readability */
+    }
+
+    .image-section img {
+        max-width: 100%; /* Ensure the image is responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 768px) {
+    .text-section {
+        text-align: left; /* Align the text to the left */
+        margin-left: 20px; /* Add some margin to move the text to the left */
+    }
+}
+
+/* Hide the hamburger menu on larger screens */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* Hide the hamburger menu */
+    }
+}
+
+/* Show the hamburger menu on smaller screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Ensure the hamburger menu is visible */
+        cursor: pointer; /* Add a pointer cursor for better UX */
+    }
+}
+
+/* Back to Top Button Styling */
+.back-to-top {
+    position: fixed; /* Fix the button to the viewport */
+    bottom: 20px; /* Distance from the bottom */
+    right: 20px; /* Distance from the right */
+    width: 50px; /* Button width */
+    height: 50px; /* Button height */
+    background-color: #007BFF; /* Blue background color */
+    color: white; /* White arrow color */
+    border: none; /* Remove border */
+    border-radius: 50%; /* Make the button circular */
+    display: flex; /* Center the arrow inside the button */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    font-size: 1.5rem; /* Arrow size */
+    cursor: pointer; /* Pointer cursor on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
+    opacity: 0; /* Initially hidden */
+    visibility: hidden; /* Prevent interaction when hidden */
+    transition: opacity 0.3s ease, visibility 0.3s ease; /* Smooth transition */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.back-to-top:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Show the button when scrolling */
+.back-to-top.show {
+    opacity: 1; /* Make it visible */
+    visibility: visible; /* Allow interaction */
+}
+
+img {
+    max-width: 500%; /* Makes images responsive */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes inline spacing */
+}
+
+/* Move the logo to the left and show the hamburger menu on mobile */
+@media (max-width: 768px) {
+    .navbar {
+        justify-content: space-between; /* Space out the logo and hamburger menu */
+        padding: 10px 15px; /* Adjust padding for mobile */
+    }
+
+    .navbar .logo {
+        margin-left: 0; /* Remove extra margin */
+    }
+
+    .hamburger {
+        display: flex; /* Ensure the hamburger menu is visible */
+        position: relative; /* Ensure proper positioning */
+        top: 0; /* Align it properly */
+        right: 70px; /* Align it to the right */
+    }
+}
+
+/* Adjust the first section for desktop screens */
+@media (min-width: 1024px) {
+    .quote-wrapper {
+        margin-top: 100px; /* Push the section lower */
+        padding: 50px 20px; /* Add padding for a larger appearance */
+    }
+
+    .quote-section {
+        font-size: 1.2rem; /* Increase font size for better readability */
+        line-height: 1.8; /* Adjust line height for spacing */
+    }
+
+    .quote-left {
+        max-width: 800px; /* Increase the width of the left content */
+    }
+
+    .quote-right img {
+        max-width: 500px; /* Adjust the size of the image */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Adjust the first section for mobile devices */
+@media (max-width: 768px) {
+    .quote-wrapper {
+        margin-top: 100px; /* Push the section lower to avoid overlap with the navbar */
+        padding: 20px; /* Add padding for spacing */
+    }
+
+    .quote-section {
+        padding-top: 20px; /* Add padding to ensure content is not hidden under the navbar */
+    }
+}
+
+/* Fix white background issue on mobile */
+@media (max-width: 768px) {
+    .quote-wrapper {
+        margin-top: 0; /* Remove any margin */
+        padding-top: 80px; /* Add padding to push content below the navbar */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+        min-height: 100vh; /* Ensure the section fills the viewport height */
+        box-sizing: border-box; /* Include padding in height calculation */
+    }
+
+    .quote-section {
+        padding-top: 20px; /* Add padding to ensure content is not hidden under the navbar */
+    }
+}
+
+/* Adjust button height and move it closer to the stars */
+.button-container .btn {
+    padding: 10px 20px; /* Reduce button height */
+    margin-top: 10px; /* Add spacing above the button */
+}
+
+.star-rating {
+    margin-top: 5px; /* Reduce spacing above the stars */
+}
+
+/* Make the section bigger on desktop */
+@media (min-width: 1024px) {
+    .quote-wrapper {
+        margin-top: 0; /* Remove any margin */
+        padding: 100px 40px; /* Add padding for a larger appearance */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+        min-height: 120vh; /* Make the section taller */
+    }
+
+    .quote-section {
+        font-size: 1.5rem; /* Increase font size for better readability */
+        line-height: 1.8; /* Adjust line height for spacing */
+    }
+
+    .quote-left {
+        max-width: 900px; /* Increase the width of the left content */
+    }
+
+    .quote-right img {
+        max-width: 600px; /* Adjust the size of the image */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* Adjust the first section for mobile and iPad views */
+@media (max-width: 1024px) {
+    .quote-wrapper {
+        margin-top: 80px; /* Push the section further down */
+        padding-top: 20px; /* Add padding for spacing */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+        min-height: 100vh; /* Ensure the section fills the viewport height */
+        box-sizing: border-box; /* Include padding in height calculation */
+    }
+
+    .quote-section {
+        padding-top: 40px; /* Add padding to ensure the title is not hidden under the navbar */
+    }
+}
+
+/* Adjust the first section for desktop screens */
+@media (min-width: 1025px) {
+    .quote-wrapper {
+        margin-top: 120px; /* Push the section lower for desktop */
+        padding: 100px 40px; /* Add padding for a larger appearance */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+        min-height: 120vh; /* Make the section taller */
+    }
+
+    .quote-section {
+        font-size: 1.5rem; /* Increase font size for better readability */
+        line-height: 1.8; /* Adjust line height for spacing */
+    }
+
+    .quote-left {
+        max-width: 900px; /* Increase the width of the left content */
+    }
+
+    .quote-right img {
+        max-width: 600px; /* Adjust the size of the image */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+/* General Fix for Section Below Navbar */
+.quote-wrapper {
+    margin: 0; /* Remove any margin */
+    padding: 0; /* Remove any padding */
+    background-color: #f9f9f9; /* Ensure the background is light grey */
+    width: 100%; /* Ensure the section spans the full width */
+    min-height: 100vh; /* Ensure the section fills the viewport height */
+    box-sizing: border-box; /* Include padding in height calculation */
+    position: relative; /* Ensure proper stacking */
+}
+
+/* Fix for Desktop View */
+@media (min-width: 1025px) {
+    .quote-wrapper {
+        margin-top: 0; /* Remove any top margin */
+        padding-top: 190px; /* Push the section even lower to avoid overlap with the navbar */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+    }
+}
+
+/* Fix for Mobile and Tablet View */
+@media (max-width: 1024px) {
+    .quote-wrapper {
+        margin-top: 0; /* Remove any top margin */
+        padding-top: 160px; /* Push the section even lower to avoid overlap with the navbar */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+    }
+}
+
+/* Adjust the first section for mobile and move it slightly to the right */
+@media (max-width: 768px) {
+    .quote-wrapper {
+        margin-top: 0; /* Remove any top margin */
+        padding-top: 160px; /* Push the section lower to avoid overlap with the navbar */
+        padding-left: 55px; /* Add padding to move the section slightly to the right */
+        background-color: #f9f9f9; /* Ensure the background is light grey */
+        min-height: 100vh; /* Ensure the section fills the viewport height */
+        box-sizing: border-box; /* Include padding in height calculation */
+    }
+
+    .quote-section {
+        padding-top: 40px; /* Add padding to ensure the title is not hidden under the navbar */
+        margin-left: 10px; /* Move the section slightly to the right */
+    }
+}
+
+/* Move the logo slightly to the left for desktop */
+@media (min-width: 1025px) {
+    .navbar .logo {
+        margin-left: 0px; /* Move the logo 20px to the left */
+    }
+}
+
+/* Contact Me Section */
+.contact-me {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 60px 20px; /* Add spacing around the section */
+    text-align: center; /* Center-align the content */
+}
+
+.contact-me .section-title {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 2rem; /* Larger title */
+    color: #333; /* Dark grey color */
+    margin-bottom: 40px; /* Add spacing below the title */
+}
+
+.contact-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two-column layout */
+    gap: 40px; /* Add spacing between columns */
+    max-width: 1200px; /* Limit the width */
+    margin: 0 auto; /* Center the grid */
+}
+
+.contact-placeholder, .contact-socials {
+    background-color: #fff; /* White background for contrast */
+    padding: 30px; /* Add padding inside the boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.contact-placeholder h3, .contact-socials h3 {
+    font-size: 1.5rem; /* Larger heading */
+    color: #007BFF; /* Blue color for headings */
+    margin-bottom: 20px; /* Add spacing below headings */
+}
+
+.contact-placeholder p, .contact-socials ul {
+    font-size: 1rem; /* Standard font size */
+    color: #555; /* Medium grey for text */
+    line-height: 1.6; /* Improve readability */
+}
+
+.social-links {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.social-links li {
+    margin-bottom: 10px; /* Add spacing between links */
+}
+
+.social-links a {
+    color: #007BFF; /* Blue color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.social-links a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* Why Choose Me Section */
+.why-choose-me {
+    background-color: #fff; /* White background */
+    padding: 60px 20px; /* Add spacing around the section */
+    text-align: center; /* Center-align the content */
+}
+
+.why-choose-me .section-title {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 2rem; /* Larger title */
+    color: #333; /* Dark grey color */
+    margin-bottom: 40px; /* Add spacing below the title */
+}
+
+.why-choose-me-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Ensure consistent box size */
+    gap: 30px; /* Add spacing between items */
+    max-width: 1200px; /* Limit the width of the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+.why-item {
+    background-color: #f9f9f9; /* Light grey background */
+    padding: 30px; /* Add padding inside the boxes */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align the content */
+    width: 100%; /* Ensure the boxes take up full width of the grid column */
+    max-width: 350px; /* Set a maximum width for the boxes */
+    margin: 0 auto; /* Center the boxes within the grid */
+}
+
+.why-item i {
+    font-size: 2rem; /* Larger icon size */
+    color: #007BFF; /* Blue color for icons */
+    margin-bottom: 20px; /* Add spacing below the icon */
+}
+
+.why-item p {
+    font-size: 1rem; /* Standard font size */
+    color: #555; /* Medium grey for text */
+    line-height: 1.6; /* Improve readability */
+}
+
+/* Responsive Fix for Mobile View */
+@media (max-width: 768px) {
+    .contact-me-content, .why-choose-me-grid, .testimonials-grid {
+        padding: 0 10px; /* Add padding to prevent content from overflowing */
+        margin: 0 auto; /* Center the content */
+    }
+
+    .contact-placeholder, .contact-socials, .why-item, .testimonial-card {
+        width: 100%; /* Ensure elements fit within the viewport */
+        max-width: 100%; /* Prevent elements from exceeding the viewport width */
+    }
+}
+
+/* First Section Styling */
+.first-section {
+    margin-top: 200px; /* Push the section lower */
+}

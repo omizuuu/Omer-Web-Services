@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omer Zulfija's Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="icon" href="assets/img/logo.jpg" type="image/jpeg">
+    <style>
+        /* Prevent horizontal scrolling */
+        body, html {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/oz (2).png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="build-website.html">Contact</a></li>
+                <li><a href="#idea-to-reality">Case Studies</a></li>
+            </ul>
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdown-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="build-website.html">Contact</a></li>
+                <li><a href="#idea-to-reality">Case Studies</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    
+     <!-- Navbar closes here -->
+
+    <div class="quote-wrapper">
+        <section class="quote-section">
+            <!-- Left Part -->
+            <div class="quote-left">
+                <div class="quote">
+                    <p>Turning <span class="highlight">ideas</span> into reality, one line of <br> <span class="highlight">code</span> at a time</p>
+                </div>
+                <p class="font-paragraph">
+                    We specialize in crafting modern, scalable, and user-friendly web solutions tailored to your business needs. Let’s build the future together.
+                </p>
+                <div class="button-container">
+                    <a href="#services" class="btn">Services</a>
+                </div>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Right Part -->
+            <div class="quote-right">
+                <img src="assets/img/animated.png" alt="Animated Image">
+            </div>
+        </section>
+    </div>
+
+    <div class="services-section" id="services">
+        <!-- Left Side -->
+        <div class="services-left" data-aos="fade-right">
+            <section class="what-we-offer">
+                <h2 class="section-title">What We Offer</h2>
+                <p class="font-paragraph">
+                    We provide modern, scalable, and visually stunning solutions tailored to your needs.
+                </p>
+            </section>
+            <!-- Testimonial -->
+            <div class="testimonial" data-aos="fade-up" data-aos-delay="100">
+                <p class="testimonial-text">
+                    <i class="fas fa-quote-left"></i> Working with Omer was a game-changer. Fast delivery and amazing attention to detail! <i class="fas fa-quote-right"></i>
+                </p>
+                <p class="testimonial-author">— Anid Fetai</p>
+            </div>
+            <a href="build-website.html" class="btn">Let’s Build Your Website</a>
+        </div>
+
+        <!-- Right Side -->
+        <div class="services-right">
+            <!-- Service Card 1 -->
+            <div class="service-card" data-aos="fade-up">
+                <i class="fas fa-code service-icon"></i>
+                <h3 class="service-title">Custom Web Development</h3>
+                <p class="service-description">
+                    Fully tailored websites built from scratch using modern tools like React, Tailwind, and PHP.
+                </p>
+            </div>
+
+            <!-- Service Card 2 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-laptop-code service-icon"></i>
+                <h3 class="service-title">Frontend Development</h3>
+                <p class="service-description">
+                    Craft engaging and mobile-friendly UIs using React, Tailwind CSS, and clean HTML.
+                </p>
+            </div>
+
+            <!-- Service Card 3 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-plug service-icon"></i>
+                <h3 class="service-title">API Integration</h3>
+                <p class="service-description">
+                    Seamlessly connect your frontend to powerful backends and third-party APIs.
+                </p>
+            </div>
+
+            <!-- Service Card 4 -->
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-database service-icon"></i>
+                <h3 class="service-title">Database Management</h3>
+                <p class="service-description">
+                    Design and manage secure, high-performance databases using MySQL.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials-section" data-aos="fade-up">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonials-grid">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-card" data-aos="fade-up">
+                <div class="testimonial-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="testimonial-author">Arlind Hoxha</h3>
+                <p class="testimonial-text">
+                    Omer's work exceeded my expectations!
+                </p>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="testimonial-author">Erisa Dervishi</h3>
+                <p class="testimonial-text">
+                    Working with Omer was a pleasure. His attention to detail is unmatched.
+                </p>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="testimonial-author">Besnik Krasniqi</h3>
+                <p class="testimonial-text">
+                    Highly recommend Omer for any project!
+                </p>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+
+            <!-- Testimonial 4 -->
+            <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="testimonial-author">Drita Leka</h3>
+                <p class="testimonial-text">
+                    Omer transformed our ideas into reality.
+                </p>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- From Idea to Reality Section -->
+    <div class="idea-to-reality-section" data-aos="fade-up" id="idea-to-reality">
+        <!-- Left Side -->
+        <div class="idea-left services-left" data-aos="fade-right">
+            <h2 class="section-title">From Idea to Reality</h2>
+            <p class="font-paragraph">
+                Transform your vision into a fully functional and visually stunning digital product. We bring your ideas to life with precision and creativity.
+            </p>
+
+            <!-- Tech Stack Section -->
+            <div class="tech-stack">
+                <h3 class="tech-stack-title"><i class="fas fa-tools"></i> Tech Stack I Use</h3>
+                <div class="tech-stack-grid">
+                    <!-- Frontend -->
+                    <div class="tech-stack-column" data-aos="fade-up">
+                        <h4>Frontend</h4>
+                        <ul class="tech-stack-list">
+                            <li><i class="fas fa-code"></i> HTML</li>
+                            <li><i class="fas fa-code"></i> CSS</li>
+                            <li><i class="fas fa-code"></i> Tailwind</li>
+                        </ul>
+                    </div>
+
+                    <!-- JavaScript -->
+                    <div class="tech-stack-column" data-aos="fade-up" data-aos-delay="100">
+                        <h4>JavaScript</h4>
+                        <ul class="tech-stack-list">
+                            <li><i class="fas fa-laptop-code"></i> JavaScript</li>
+                            <li><i class="fas fa-laptop-code"></i> React</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="tech-stack-column" data-aos="fade-up" data-aos-delay="200">
+                        <h4>Backend</h4>
+                        <ul class="tech-stack-list">
+                            <li><i class="fas fa-server"></i> PHP</li>
+                            <li><i class="fas fa-database"></i> MySQL</li>
+                        </ul>
+                    </div>
+
+                    <!-- CMS -->
+                    <div class="tech-stack-column" data-aos="fade-up" data-aos-delay="300">
+                        <h4>CMS</h4>
+                        <ul class="tech-stack-list">
+                            <li><i class="fas fa-wordpress"></i> WordPress (Coming Soon)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side -->
+        <div class="idea-right" data-aos="fade-left">
+            <!-- Idea Card 1 -->
+            <a href="https://bunidesign.netlify.app" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/bunisc.png" alt="Art Mobilje" class="concept-image">
+                    <div class="concept-label">ART MOBILJE</div>
+                </div>
+            </a>
+            <!-- Idea Card 2 -->
+            <a href="moviedb.html" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/moviedb.jpeg" alt="MovieDB Project" class="concept-image">
+                    <div class="concept-label">MOVIEDB PROJECT</div>
+                </div>
+            </a>
+    
+            <!-- Idea Card 3 -->
+            <a href="php.html" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/php.jpeg" alt="Auth System Project" class="concept-image">
+                    <div class="concept-label">AUTH SYSTEM</div>
+                </div>
+            </a>
+    
+            <!-- Idea Card 4 -->
+            <a href="tailwind.html" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/tail.jpeg" alt="Theme TailwindCSS Project" class="concept-image">
+                    <div class="concept-label">THEME TAILWINDCSS</div>
+                </div>
+            </a>
+    
+            <!-- Idea Card 5 -->
+            <a href="mysql.html" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/sql.png" alt="MySQL Database Project" class="concept-image">
+                    <div class="concept-label">MYSQL DATABASE</div>
+                </div>
+            </a>
+    
+            <!-- Idea Card 6 -->
+            <div class="idea-card concept-development">
+                <img src="assets/img/word.png" alt="Coming Soon Project" class="concept-image">
+                <div class="concept-label">COMING SOON</div>
+            </div>
+        </div>
+    </div>
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Animation triggers only once
+        });
+    </script>
+    <script src="assets/js/navbar.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const scrollToId = urlParams.get("scrollTo");
+
+            if (scrollToId) {
+                const targetElement = document.getElementById(scrollToId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({ behavior: "smooth" });
+                }
+            }
+        });
+    </script>
+    <script>
+    // Back to Top Button Functionality
+    document.addEventListener("DOMContentLoaded", () => {
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Show the button when scrolling down
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        // Scroll to the top when the button is clicked
+        backToTopButton.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    });
+
+ 
+</script>
+    
+    <footer class="footer">
+    <div class="footer-container">
+        <!-- Left Column -->
+        <div class="footer-left">
+            <h2 class="footer-title">Omer Web Services</h2>
+            <p class="footer-description">Turning ideas into functional web experiences.</p>
+        </div>
+
+        <!-- Center Column -->
+        <div class="footer-center">
+            <h3 class="footer-heading">Quick Links</h3>
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="index.html?scrollTo=services" class="footer-link">Services</a>
+            <a href="build-website.html" class="footer-link">Contact</a>
+            <a href="index.html?scrollTo=idea-to-reality" class="footer-link">Case Studies</a>
+        </div>
+
+        <!-- Right Column -->
+        <div class="footer-right">
+            <h3 class="footer-heading">Follow Me</h3>
+            <div class="footer-social-links">
+                <a href="https://github.com/yourusername" target="_blank" class="social-icon">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.facebook.com/tsmtfclan.live" target="_blank" class="social-icon">
+                    <i class="fab fa-facebook"></i> Facebook
+                </a>
+                <a href="https://instagram.com/yourusername" target="_blank" class="social-icon">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="footer-divider">
+        © 2025 Omer Web Services. All rights reserved.
+    </div>
+</footer>
+</body>
+</html>

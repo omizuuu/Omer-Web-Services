@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let’s Build Your Website</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <link rel="icon" href="assets/img/logo.jpg" type="image/jpeg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/oz (2).png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html?scrollTo=services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="index.html?scrollTo=idea-to-reality">Case Studies</a></li>
+            </ul>
+            <!-- Hamburger Menu -->
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdown-menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html?scrollTo=services">Services</a></li>
+                <li><a href="index.html?scrollTo=idea-to-reality">Case Studies</a></li>
+                <li><a href="build-website.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Me Section -->
+    <section class="contact-me" data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-right">Contact Me</h2>
+        <div class="contact-me-content" data-aos="fade-up">
+            <!-- Left Side: Text Content -->
+            <div class="contact-placeholder" data-aos="zoom-in">
+                <h3>Let’s Connect!</h3>
+                <p>Let’s Build Something Great Together!</p>
+                <p>
+                    Whether you have a project in mind, a question, or just want to say hi — I’d love to hear from you. 
+                    I’m always open to discussing new ideas, collaborations, or freelance opportunities.
+                </p>
+                <p>📬 Reach out via social media. I’ll get back to you as soon as possible!</p>
+            </div>
+
+            <!-- Right Side: Social Links -->
+            <div class="contact-socials" data-aos="zoom-in">
+                <h3 class="section-title">Socials</h3>
+                <ul class="social-links">
+                    <li>
+                        <a href="https://www.instagram.com/oz.webservice/" target="_blank">
+                            <i class="fab fa-instagram"></i> Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:omer.webservice@gmail.com">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/tsmtfclan.live" target="_blank">
+                            <i class="fab fa-facebook"></i> Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/omerzulfija" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Me Section -->
+    <section class="why-choose-me" data-aos="fade-up">
+        <h2 class="section-title" data-aos="fade-right">Why Choose Me?</h2>
+        <div class="why-choose-me-grid">
+            <div class="why-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fas fa-code why-icon"></i>
+                <p><strong>Full-Stack Expertise:</strong> I specialize in both frontend and backend development using modern technologies like HTML, CSS, JavaScript, React, and more.</p>
+            </div>
+            <div class="why-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-bullseye why-icon"></i>
+                <p><strong>Focused on Results:</strong> I build websites that are fast, responsive, and designed to help you achieve your business goals.</p>
+            </div>
+            <div class="why-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="fas fa-lightbulb why-icon"></i>
+                <p><strong>Creative Problem-Solver:</strong> I take the time to understand your needs and craft tailored solutions.</p>
+            </div>
+            <div class="why-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-rocket why-icon"></i>
+                <p><strong>Clean Code & Modern Design:</strong> I combine clean, scalable code with sleek, professional UI to make your website stand out.</p>
+            </div>
+            <div class="why-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-handshake why-icon"></i>
+                <p><strong>Reliable & Communicative:</strong> You’ll always be updated and involved during the development process.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        AOS.init({
+            duration: 1000, // Animation duration in milliseconds
+            once: true, // Animation triggers only once
+        });
+    </script>
+    <script src="assets/js/navbar.js"></script>
+   
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Left Column -->
+            <div class="footer-left">
+                <h2 class="footer-title">Omer Web Services</h2>
+                <p class="footer-description">Turning ideas into functional web experiences.</p>
+            </div>
+
+            <!-- Center Column -->
+            <div class="footer-center">
+                <h3 class="footer-heading">Quick Links</h3>
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="index.html?scrollTo=services" class="footer-link">Services</a>
+                <a href="build-website.html" class="footer-link">Contact</a>
+                <a href="index.html?scrollTo=idea-to-reality" class="footer-link">Case Studies</a>
+            </div>
+
+            <!-- Right Column -->
+            <div class="footer-right">
+                <h3 class="footer-heading">Follow Me</h3>
+                <div class="footer-social-links">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.facebook.com/tsmtfclan.live" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="footer-divider">
+            © 2025 Omer Web Services. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
