@@ -522,7 +522,7 @@ html, body {
         text-align: left; /* Align text to the left */
         max-width: 120%; /* Reduce the width of the left part */
         margin-left: -60px;
-        margin-top: 50px; /* Move the left part more to the left */
+        margin-top: 35px; /* Move the left part more to the left */
     }
 
     .button-container,
@@ -1888,7 +1888,7 @@ img {
         display: flex; /* Ensure the hamburger menu is visible */
         position: relative; /* Ensure proper positioning */
         top: 0; /* Align it properly */
-        right: 70px; /* Align it to the right */
+        right: 30px; /* Align it to the right */
     }
 }
 
@@ -1917,7 +1917,7 @@ img {
 /* Adjust the first section for mobile devices */
 @media (max-width: 768px) {
     .quote-wrapper {
-        margin-top: 100px; /* Push the section lower to avoid overlap with the navbar */
+        margin-top: 120px; /* Push the section lower to avoid overlap with the navbar */
         padding: 20px; /* Add padding for spacing */
     }
 
