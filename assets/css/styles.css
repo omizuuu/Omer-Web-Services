@@ -520,13 +520,14 @@ html, body {
     .quote-left {
         align-items: flex-start; /* Align the left part to the left */
         text-align: left; /* Align text to the left */
-        max-width: 90%; /* Reduce the width of the left part */
-        margin-left: -90px;
+        max-width: 120%; /* Reduce the width of the left part */
+        margin-left: -60px;
         margin-top: 50px; /* Move the left part more to the left */
     }
 
     .button-container,
     .star-rating {
+        
         text-align: center; /* Center the button and stars */
         margin: 0 auto; /* Center them horizontally */
     }
@@ -1082,7 +1083,7 @@ html, body {
 @media (max-width: 768px) {
     .idea-to-reality-section {
         grid-template-columns: 1fr; /* Stack content in one column */
-        gap: 20px; /* Adjust spacing between items */
+        gap: 10px; /* Adjust spacing between items */
     }
 
     .idea-right {
@@ -1105,6 +1106,26 @@ html, body {
     .idea-right {
         order: 2; /* Ensure the "Project" part appears after the left part */
     }
+}
+
+/* Title Styling for Mobile */
+@media (max-width: 768px) {
+    .idea-to-reality-section .section-title {
+        font-size: 2rem; /* Slightly reduce font size for mobile */
+        text-align: center; /* Center-align the title */
+        max-width: 90%; /* Increase the width of the title */
+        margin: 0 auto; /* Center the title horizontally */
+        line-height: 1.6; /* Improve readability */
+        word-wrap: break-word; /* Ensure long words break properly */
+    }
+}
+
+.idea-to-reality-section .section-title {
+    max-width: 120%; /* Increase the width of the title */
+    margin: 0 auto; /* Center the title horizontally */
+    text-align: center; /* Center-align the text */
+    font-size: 1.8rem; /* Adjust font size for mobile */
+    line-height: 1.4; /* Improve readability */
 }
 
 /* Default Layout for Larger Screens */
@@ -2170,3 +2191,5 @@ img {
 .first-section {
     margin-top: 200px; /* Push the section lower */
 }
+
+/* Adjust the first section for mobile devices */
