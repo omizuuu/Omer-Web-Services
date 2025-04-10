@@ -6,7 +6,60 @@
     <title>PHP Authentication System</title>
     <link rel="stylesheet" href="assets/css/styles.css"> <!-- Link to your existing CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Add padding to the body to account for the fixed navbar */
+        body {
+            padding-top: 200px; /* Adjust this value to match the height of your navbar */
+            box-sizing: border-box; /* Ensure padding is included in height calculations */
+        }
 
+        /* Optional: Ensure the main content has proper spacing */
+        .main-content {
+            margin-top: 100px; /* Add space below the navbar */
+            margin-bottom: 326px; /* Add space above the footer */
+            box-sizing: border-box; /* Ensure padding/margin is included in height calculation */
+        }
+
+        /* Optional: Add spacing to the section title */
+        .section-title {
+            margin-top: 0; /* Remove extra margin above the title */
+            padding-top: 50px; /* Add some padding above the title */
+            text-align: center; /* Center-align the title */
+            font-size: 2rem; /* Adjust the font size */
+            color: #333; /* Dark grey text color */
+        }
+
+        /* Center the section for mobile devices */
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 0 auto; /* Center the section horizontally */
+                padding-top: 0px; /* Add padding for spacing */
+                text-align: center; /* Center-align the text */
+                margin-bottom: 150px; /* Increase the space above the footer */
+            }
+
+            .grid-layout {
+                display: flex; /* Use flexbox for layout */
+                flex-direction: column; /* Stack the text and image vertically */
+                align-items: center; /* Center-align the content */
+                gap: 20px; /* Add spacing between the text and image */
+            }
+
+            .text-section {
+                text-align: center; /* Center-align the text content */
+                margin: 0; /* Reset any margins */
+            }
+
+            .image-section {
+                margin: 0; /* Reset any margins */
+            }
+
+            .project-image {
+                max-width: 100%; /* Ensure the image fits within the viewport */
+                height: auto; /* Maintain the aspect ratio */
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
