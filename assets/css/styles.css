@@ -13,6 +13,7 @@ body {
     background-color: white;
     color: black;
     padding-top: 80px; /* Adjust this value to match the height of the navbar */
+    box-sizing: border-box; /* Ensure padding is included in height calculations */
 }
 
 /* Remove default margins from the body and html */
@@ -237,14 +238,17 @@ html, body {
 
 /* Main Content */
 .main-content {
+    padding-top: 120px; /* Add space to push the content below the fixed navbar */
+    margin: 0 auto; /* Center the content horizontally */
+    max-width: 1200px; /* Limit the width of the content */
+    box-sizing: border-box; /* Include padding in width calculations */
     padding-bottom: 40px;
-    padding-top: 80px; /* Add space for the fixed navbar */
-    max-width: 1200px;
-    margin: 0 auto;
     background-color: #f9f9f9; /* Light grey background */
     padding: 40px 20px; /* Add padding around the content */
     border-radius: 10px; /* Optional: Add rounded corners for the section */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    flex: 1; /* Allow the main content to grow and push the footer down */
+    margin-top: 0; /* Reset any margin that might conflict */
 }
 
 /* Grid Layout */
@@ -526,6 +530,8 @@ html, body {
     }
 
     .button-container,
+
+
     .star-rating {
         
         text-align: center; /* Center the button and stars */
@@ -676,10 +682,12 @@ html, body {
 
 /* Section Title */
 .section-title {
+    margin-top: 0; /* Remove any extra margin above the title */
+    padding-top: 20px; /* Add some padding above the title for breathing room */
+    text-align: center; /* Center-align the title */
+    font-size: 2rem; /* Adjust the font size if needed */
     font-family: 'Poppins', sans-serif; /* Use a clean, modern font */
-    font-size: 2rem; /* Adjust the font size */
     color: #333; /* Dark grey text color */
-    text-align: center; /* Center the title */
     margin-bottom: 20px; /* Add spacing below the title */
     margin-top: 20px; /* Add spacing above the title */
 }
@@ -1378,6 +1386,7 @@ html, body {
     margin: 0 auto; /* Center the content horizontally */
     justify-content: center; /* Center the grid items */
     align-items: stretch; /* Ensure both boxes have the same height */
+    width: 100%;
 }
 
 .contact-placeholder,
@@ -1521,6 +1530,8 @@ html, body {
     justify-content: space-between; /* Space out the columns */
     flex-wrap: wrap; /* Ensure responsiveness */
     gap: 20px; /* Add spacing between columns */
+    margin-top: auto; /* Push the footer to the bottom of the page */
+    text-align: center; /* Center-align the footer text */
 }
 
 .footer-container {
@@ -2188,8 +2199,39 @@ img {
 }
 
 /* First Section Styling */
-.first-section {
-    margin-top: 200px; /* Push the section lower */
+
+
+/* Sticky Footer Fix */
+body {
+    display: flex;
+    flex-direction: column; /* Ensure the body uses a column layout */
+    min-height: 100vh; /* Make the body take up the full viewport height */
+    margin: 0; /* Remove default margin */
+}
+
+.main-content {
+    flex: 1; /* Allow the main content to grow and push the footer down */
+}
+
+.footer {
+    margin-top: auto; /* Push the footer to the bottom of the page */
+    background-color: #1a1a1a; /* Dark background for the footer */
+    color: #f1f1f1; /* Light text color */
+    padding: 20px; /* Add padding for spacing */
+    text-align: center; /* Center-align the footer text */
 }
 
 /* Adjust the first section for mobile devices */
+/* Fix for sections with titles under the navbar */
+.section {
+    transform: translateY(100px); /* Move the section 100px down */
+    box-sizing: border-box; /* Ensure padding is included in height calculation */
+}
+
+/* Specific Fix for the First Section */
+.first-section {
+    transform: translateY(-150px); /* Move the first section 150px down */
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 1200px; /* Limit the width of the section */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
