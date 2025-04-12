@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminal Project</title>
+    <link rel="stylesheet" href="assets/css/styles.css"> <!-- Link to your existing CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="icon" href="assets/img/logo.jpg" type="image/jpeg">
+    <style>
+        /* Add padding to the body to account for the fixed navbar */
+        body {
+            padding-top: 200px; /* Adjust this value to match the height of your navbar */
+            box-sizing: border-box; /* Ensure padding is included in height calculations */
+        }
+
+        /* Optional: Ensure the main content has proper spacing */
+        .main-content {
+            margin-top: 50px; /* Add space below the navbar */
+            margin-bottom: 150px; /* Add space above the footer */
+            box-sizing: border-box; /* Ensure padding/margin is included in height calculation */
+        }
+
+        /* Optional: Add spacing to the section title */
+        .section-title {
+            margin-top: 0; /* Remove extra margin above the title */
+            padding-top: 20px; /* Add some padding above the title */
+            text-align: center; /* Center-align the title */
+            font-size: 2rem; /* Adjust the font size */
+            color: #333; /* Dark grey text color */
+        }
+
+        /* Center the section for mobile devices */
+        @media (max-width: 768px) {
+            .main-content {
+                margin: 0 auto; /* Center the section horizontally */
+                padding-top: 0px; /* Add padding for spacing */
+                text-align: center; /* Center-align the text */
+                margin-bottom: 150px; /* Increase the space above the footer */
+            }
+
+            .grid-layout {
+                display: flex; /* Use flexbox for layout */
+                flex-direction: column; /* Stack the text and image vertically */
+                align-items: center; /* Center-align the content */
+                gap: 20px; /* Add spacing between the text and image */
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <a href="index.html">
+                <img src="assets/img/oz (2).png" alt="Logo" class="logo-img">
+            </a>
+        </div>
+        <div class="nav-content">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="build-website.html">Contact</a></li>
+                <li><a href="#idea-to-reality">Case Studies</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Title -->
+        <h2 class="section-title">Terminal Project</h2>
+
+        <!-- Grid Layout -->
+        <div class="grid-layout">
+            <!-- Text Section -->
+            <div class="text-section">
+                <p>
+                    Welcome to my terminal-based portfolio! This project is built using Tailwind CSS, HTML, and JavaScript, showcasing my skills in front-end development. It offers a clean and interactive way to explore my work directly from the terminal, highlighting key projects, my technical abilities, and the technologies I specialize in. The design is simple yet modern, thanks to Tailwind CSS, while JavaScript adds interactive elements. This portfolio is a reflection of my passion for development and my commitment to creating unique user experiences.
+                </p>
+                <!-- Link -->
+                <a href="https://omer-terminal.netlify.app/" class="styled-link" target="_blank" rel="noopener noreferrer">
+                    Visit the Terminal Project
+                </a>
+            </div>
+
+            <!-- Image Section -->
+            <div class="image-section">
+                <img src="assets/img/terminal.jpeg" alt="Terminal Project" class="project-image">
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                <h2 class="footer-title">Omer Web Services</h2>
+                <p class="footer-description">Turning ideas into functional web experiences.</p>
+            </div>
+            <div class="footer-center">
+                <h3 class="footer-heading">Quick Links</h3>
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="index.html?scrollTo=services" class="footer-link">Services</a>
+                <a href="build-website.html" class="footer-link">Contact</a>
+                <a href="index.html?scrollTo=idea-to-reality" class="footer-link">Case Studies</a>
+            </div>
+            <div class="footer-right">
+                <h3 class="footer-heading">Follow Me</h3>
+                <div class="footer-social-links">
+                    <a href="https://github.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://www.facebook.com/tsmtfclan.live" target="_blank" class="social-icon">
+                        <i class="fab fa-facebook"></i> Facebook
+                    </a>
+                    <a href="https://instagram.com/yourusername" target="_blank" class="social-icon">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider">
+            © 2025 Omer Web Services. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>
