@@ -18,23 +18,20 @@
 <title>Omer Web Services | Full Stack Web Developer</title>
 <meta name="title" content="Omer Web Services | Full Stack Web Developer">
 <meta name="description" content="I'm Omer, a passionate full stack web developer crafting modern, responsive, and scalable web applications with the latest technologies.">
-    <meta name="keywords" content="web development, Omer Zulfija, full stack developer, portfolio, website, Omer Web Service, Omer Web, Omer Portfolio, ozwebservice">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://omerzulfija.com/">
 <meta property="og:title" content="Omer Web Services | Full Stack Web Developer">
 <meta property="og:description" content="I'm Omer, a passionate full stack web developer crafting modern, responsive, and scalable web applications with the latest technologies.">
-<meta property="og:image" content="assets/img/logo.png">
-
-
+<meta property="og:image" content="assets/img/logo.jpg"> <!-- Vendos këtu një preview image të faqes tënde -->
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image">
 <meta property="twitter:url" content="https://omerzulfija.com/">
 <meta property="twitter:title" content="Omer Web Services | Full Stack Web Developer">
 <meta property="twitter:description" content="I'm Omer, a passionate full stack web developer crafting modern, responsive, and scalable web applications with the latest technologies.">
-
+<meta property="twitter:image" content="https://omerzulfija.com/preview.png"> <!-- I njëjti imazh për Twitter -->
 
 <!-- Additional SEO Meta -->
 <meta name="keywords" content="Omer, omerzulfija.com, web development, full stack developer, HTML, CSS, JavaScript, React, Tailwind, Node.js, PHP, MySQL, portfolio, web design">
@@ -56,6 +53,59 @@
         body, html {
             overflow-x: hidden;
         }
+
+.projects-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 50px 20px;
+}
+
+.project-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.project-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.project-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
     </style>
 </head>
 <body>
@@ -320,6 +370,7 @@
                     <div class="concept-label">ART MOBILJE</div>
                 </div>
             </a>
+
             <!-- Idea Card 2 -->
             <a href="moviedb.html" rel="noopener noreferrer">
                 <div class="idea-card concept-development">
@@ -327,7 +378,7 @@
                     <div class="concept-label">MOVIEDB PROJECT</div>
                 </div>
             </a>
-    
+
             <!-- Idea Card 3 -->
             <a href="php.html" rel="noopener noreferrer">
                 <div class="idea-card concept-development">
@@ -335,7 +386,7 @@
                     <div class="concept-label">AUTH SYSTEM</div>
                 </div>
             </a>
-    
+
             <!-- Idea Card 4 -->
             <a href="tailwind.html" rel="noopener noreferrer">
                 <div class="idea-card concept-development">
@@ -343,7 +394,7 @@
                     <div class="concept-label">THEME TAILWINDCSS</div>
                 </div>
             </a>
-    
+
             <!-- Idea Card 5 -->
             <a href="mysql.html" rel="noopener noreferrer">
                 <div class="idea-card concept-development">
@@ -351,14 +402,29 @@
                     <div class="concept-label">MYSQL DATABASE</div>
                 </div>
             </a>
-    
+
             <!-- Idea Card 6 -->
-            <div class="idea-card concept-development">
-                <img src="assets/img/word.png" alt="Coming Soon Project" class="concept-image">
-                <div class="concept-label">COMING SOON</div>
-            </div>
+            <a href="terminal.html" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/terminal.jpeg" alt="Terminal Portfolio" class="concept-image">
+                    <div class="concept-label">TERMINAL PORTFOLIO</div>
+                </div>
+            </a>
+
+            <!-- Idea Card for WordPress -->
+            <a href="wordpress.html" rel="noopener noreferrer">
+                <div class="idea-card concept-development">
+                    <img src="assets/img/word.png" alt="WordPress Project" class="concept-image">
+                    <div class="concept-label">WORDPRESS PROJECT</div>
+                </div>
+            </a>
         </div>
     </div>
+
+ 
+
+    
+
     <!-- Back to Top Button -->
     <button id="backToTop" class="back-to-top">
         <i class="fas fa-arrow-up"></i>
