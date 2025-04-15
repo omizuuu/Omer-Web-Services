@@ -393,7 +393,7 @@ html, body {
         align-items: flex-start; /* Align the left part to the left */
         text-align: left; /* Align text to the left */
         max-width: 90%; /* Reduce the width of the left part */
-        margin-left: 0; /* Reset margin for mobile */
+       
     }
 
     .button-container,
@@ -412,6 +412,7 @@ html, body {
         max-width: 00px; /* Slightly larger image for mobile */
         height: auto; /* Maintain the aspect ratio */
     }
+   
 }
 
 /* Responsive Design for Mobile Devices */
@@ -475,6 +476,7 @@ html, body {
     color: black;
     text-align: left; /* Align the text to the left */
     margin-bottom: 10px; /* Add spacing below the title */
+    
 }
 
 .font-paragraph {
@@ -616,7 +618,7 @@ html, body {
 /* Wrapper for the Quote Section */
 .quote-wrapper {
     background-color: #f9f9f9; /* Lighter grey background color */
-    padding: 80px 20px; /* Adjust padding inside the wrapper */
+    padding: 80px 0px; /* Adjust padding inside the wrapper */
     margin: 0; /* Remove margin to make the background cover the entire section */
     width: 100%; /* Ensure the background spans the full width */
     min-height: 100vh; /* Make the section fill the entire viewport height */
@@ -1161,6 +1163,7 @@ html, body {
     .quote {
         text-align: center; /* Center-align the text */
         margin-bottom: 10px; /* Reduce spacing below the title */
+        margin-right: 14px;
     }
 
     .empty-space {
