@@ -352,8 +352,8 @@ html, body {
 }
 
 .button-container {
-    text-align: center; /* Center the button horizontally */
-    margin: 0 auto; /* Center the button within the left-side box */
+    text-align: left; /* Align the button to the left */
+    margin-left: 30px; /* Move the button slightly to the left */
 }
 
 .star-rating {
@@ -398,6 +398,7 @@ html, body {
 
     .button-container,
     .star-rating {
+        
         text-align: center; /* Center the button and stars */
         margin: 0 auto; /* Center them horizontally */
     }
@@ -485,8 +486,8 @@ html, body {
 
 /* Button and Stars */
 .button-container {
-    text-align: center; /* Center the button horizontally */
-    margin: 0 auto; /* Center the button within the left-side box */
+    text-align: left; /* Align the button to the left */
+    margin-left: 20px; /* Move the button slightly to the left */
 }
 
 .star-rating {
@@ -552,8 +553,8 @@ html, body {
 
 /* Button, Text, and Stars */
 .button-container {
-    text-align: center; /* Center the button horizontally */
-    margin: 0 auto; /* Center the button within the left-side box */
+    text-align: left; /* Align the button to the left */
+    margin-left: 20px; /* Move the button slightly to the left */
 }
 
 .font-paragraph {
@@ -1659,8 +1660,8 @@ html, body {
 
 /* Button and Stars for Desktop */
 .button-container {
-    text-align: center; /* Center the button horizontally */
-    margin: 0 auto; /* Center the button within the left-side box */
+    text-align: left; /* Align the button to the left */
+    margin-left: 20px; /* Move the button slightly to the left */
 }
 
 .star-rating {
@@ -1967,10 +1968,10 @@ img {
 .button-container .btn {
     padding: 10px 20px; /* Reduce button height */
     margin-top: 10px; /* Add spacing above the button */
-   
+    margin-right: 10px;
 }
 .button-container{
-    padding-left: 12px;
+    padding-left: 0px;
 }
 
 .star-rating {
@@ -1998,6 +1999,11 @@ img {
     .quote-right img {
         max-width: 600px; /* Adjust the size of the image */
         height: auto; /* Maintain aspect ratio */
+    }
+    .button-container .btn {
+        padding: 10px 20px; /* Reduce button height */
+        margin-top: 10px; /* Add spacing above the button */
+        margin-left: 150px;
     }
 }
 
