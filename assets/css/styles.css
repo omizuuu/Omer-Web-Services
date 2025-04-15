@@ -604,6 +604,7 @@ html, body {
 
     .button-container {
         margin-top: 10px; /* Add spacing above the button */
+        
     }
 
     .star-rating {
@@ -628,11 +629,11 @@ html, body {
 /* Button Styling */
 .btn {
     display: inline-block;
-    padding: 12px 20px; /* Reduce padding for a smaller button */
+    padding: 12px 20px; /* Adjust padding for the button */
     font-size: 1rem; /* Adjust font size */
     font-family: 'Poppins', sans-serif; /* Use a professional font */
     color: white; /* Button text color */
-    background-color: #007BFF; /* Button background color */
+    background: linear-gradient(90deg, springgreen, deepskyblue); /* Gradient background */
     border: none; /* Remove border */
     border-radius: 5px; /* Add rounded corners */
     text-decoration: none; /* Remove underline */
@@ -641,7 +642,7 @@ html, body {
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
+    background: linear-gradient(120deg, deepskyblue, springgreen); /* Reverse gradient on hover */
     transform: scale(1.1); /* Slightly enlarge the button on hover */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow effect */
 }
@@ -1173,6 +1174,7 @@ html, body {
 
     .button-container {
         margin-top: 10px; /* Add spacing above the button */
+        
     }
 
     .star-rating {
@@ -1574,6 +1576,7 @@ html, body {
     font-size: 1rem;
     margin-bottom: 8px;
     transition: color 0.3s ease;
+    
 }
 
 .footer-link:hover {
@@ -1581,6 +1584,8 @@ html, body {
 }
 
 .footer-social-links {
+    padding-top: 20px;
+    margin-left: 140px;
     display: flex;
     gap: 15px; /* Space between social icons */
 }
@@ -1675,6 +1680,12 @@ html, body {
 
     .star-rating {
         margin-top: 10px; /* Add spacing above the stars */
+    }
+    .footer-social-links {
+        padding-top: 20px;
+        margin-left: 160px;
+        display: flex;
+        gap: 15px; /* Space between social icons */
     }
 }
 
@@ -1956,6 +1967,10 @@ img {
 .button-container .btn {
     padding: 10px 20px; /* Reduce button height */
     margin-top: 10px; /* Add spacing above the button */
+   
+}
+.button-container{
+    padding-left: 12px;
 }
 
 .star-rating {
