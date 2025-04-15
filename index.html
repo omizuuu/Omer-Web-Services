@@ -147,14 +147,15 @@
         <section class="quote-section">
             <!-- Left Part -->
             <div class="quote-left">
-                <div class="quote">
-                    <p>Turning <span class="highlight">ideas</span> into reality, one line of<span class="highlight">code</span> at a time</p>
-                </div>
+                <p class="quote">
+                    Turning <span class="highlight">ideas</span> into reality, one line of <br>
+                    <span class="highlight">time</span> at a time.
+                </p>
                 <p class="font-paragraph">
                     We specialize in crafting modern, scalable, and user-friendly web solutions tailored to your business needs. Let’s build the future together.
                 </p>
                 <div class="button-container">
-                    <a href="#services" class="btn">Services</a>
+                    <a href="#services" class="btn">Explore Services</a>
                 </div>
                 <div class="star-rating">
                     <i class="fas fa-star"></i>
@@ -412,10 +413,10 @@
             </a>
 
             <!-- Idea Card for WordPress -->
-            <a href="/" rel="noopener noreferrer">
+            <a href="wordpress.html" rel="noopener noreferrer">
                 <div class="idea-card concept-development">
                     <img src="assets/img/word.png" alt="WordPress Project" class="concept-image">
-                    <div class="concept-label">WORDPRESS COOMING</div>
+                    <div class="concept-label">WORDPRESS PROJECT</div>
                 </div>
             </a>
         </div>
@@ -474,6 +475,39 @@
 
  
 </script>
+    <script>
+    // Typing Animation Function
+    function typeMessage(message, outputElementId, callback) {
+        const output = document.getElementById(outputElementId);
+        let index = 0;
+
+        const typingInterval = setInterval(() => {
+            if (index < message.length) {
+                output.innerHTML += message[index]; // Append one character at a time
+                index++;
+            } else {
+                clearInterval(typingInterval); // Stop the interval when the message is fully typed
+                if (callback) callback(); // Execute the callback function if provided
+            }
+        }, 50); // Typing speed in milliseconds
+    }
+
+    // On Page Load
+    window.onload = () => {
+        const titleMessage = "Turning ideas into reality, one line of code at a time.";
+        const paragraphMessage = "We specialize in crafting modern, scalable, and user-friendly web solutions tailored to your business needs. Let’s build the future together.";
+
+        // Type the title first, then the paragraph
+        typeMessage(titleMessage, "typing-title", () => {
+            typeMessage(paragraphMessage, "typing-paragraph", () => {
+                // Reveal the button, stars, and image after typing animation
+                document.getElementById("button-container").classList.add("visible");
+                document.getElementById("star-rating").classList.add("visible");
+                document.getElementById("quote-image").classList.add("visible");
+            });
+        });
+    };
+    </script>
     
     <footer class="footer">
     <div class="footer-container">
@@ -514,6 +548,5 @@
         © 2025 Omer Web Services. All rights reserved.
     </div>
 </footer>
-
 </body>
 </html>
