@@ -476,21 +476,6 @@
  
 </script>
     <script>
-    // Typing Animation Function
-    function typeMessage(message, outputElementId, callback) {
-        const output = document.getElementById(outputElementId);
-        let index = 0;
-
-        const typingInterval = setInterval(() => {
-            if (index < message.length) {
-                output.innerHTML += message[index]; // Append one character at a time
-                index++;
-            } else {
-                clearInterval(typingInterval); // Stop the interval when the message is fully typed
-                if (callback) callback(); // Execute the callback function if provided
-            }
-        }, 50); // Typing speed in milliseconds
-    }
 
     // On Page Load
     window.onload = () => {
